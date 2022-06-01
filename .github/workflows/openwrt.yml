@@ -56,6 +56,11 @@ jobs:
           pushd luci-app-openclash/tools/po2lmo
           make && sudo make install
           popd
+     - name: Install VSSR
+        run: |
+          cd lede/package/lean/
+          git clone https://github.com/jerrykuku/lua-maxminddb.git
+          git clone https://github.com/jerrykuku/luci-app-vssr.git  
       - name: Update feeds
         run: |
           ./scripts/feeds update -a
